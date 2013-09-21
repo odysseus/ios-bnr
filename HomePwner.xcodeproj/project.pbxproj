@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945C6E0A17ECDD8E00DB6C56 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E0917ECDD8E00DB6C56 /* HeaderView.xib */; };
+		945C6E2917ED53F600DB6C56 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E2817ED53F600DB6C56 /* FooterView.xib */; };
 		94DADE3F17EBB41D005AD206 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE3E17EBB41D005AD206 /* UIKit.framework */; };
 		94DADE4117EBB41D005AD206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE4017EBB41D005AD206 /* Foundation.framework */; };
 		94DADE4317EBB41D005AD206 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE4217EBB41D005AD206 /* CoreGraphics.framework */; };
@@ -16,9 +18,14 @@
 		94DADE5117EBB41E005AD206 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DADE5017EBB41E005AD206 /* Default.png */; };
 		94DADE5317EBB41E005AD206 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DADE5217EBB41E005AD206 /* Default@2x.png */; };
 		94DADE5517EBB41E005AD206 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DADE5417EBB41E005AD206 /* Default-568h@2x.png */; };
+		94DADE5D17EBBA97005AD206 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DADE5C17EBBA97005AD206 /* ItemsViewController.m */; };
+		94DADE6017EBBE18005AD206 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DADE5F17EBBE18005AD206 /* BNRItem.m */; };
+		94DADE6317EBBF8E005AD206 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DADE6217EBBF8E005AD206 /* BNRItemStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		945C6E0917ECDD8E00DB6C56 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		945C6E2817ED53F600DB6C56 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		94DADE3B17EBB41D005AD206 /* HomePwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DADE3E17EBB41D005AD206 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94DADE4017EBB41D005AD206 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,6 +39,12 @@
 		94DADE5017EBB41E005AD206 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		94DADE5217EBB41E005AD206 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		94DADE5417EBB41E005AD206 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		94DADE5B17EBBA97005AD206 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
+		94DADE5C17EBBA97005AD206 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
+		94DADE5E17EBBE18005AD206 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		94DADE5F17EBBE18005AD206 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		94DADE6117EBBF8E005AD206 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
+		94DADE6217EBBF8E005AD206 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +91,16 @@
 		94DADE4417EBB41D005AD206 /* HomePwner */ = {
 			isa = PBXGroup;
 			children = (
+				94DADE5E17EBBE18005AD206 /* BNRItem.h */,
+				94DADE5F17EBBE18005AD206 /* BNRItem.m */,
+				94DADE5B17EBBA97005AD206 /* ItemsViewController.h */,
+				94DADE5C17EBBA97005AD206 /* ItemsViewController.m */,
+				94DADE6117EBBF8E005AD206 /* BNRItemStore.h */,
+				94DADE6217EBBF8E005AD206 /* BNRItemStore.m */,
 				94DADE4D17EBB41E005AD206 /* HomePwnerAppDelegate.h */,
 				94DADE4E17EBB41E005AD206 /* HomePwnerAppDelegate.m */,
+				945C6E0917ECDD8E00DB6C56 /* HeaderView.xib */,
+				945C6E2817ED53F600DB6C56 /* FooterView.xib */,
 				94DADE4517EBB41E005AD206 /* Supporting Files */,
 			);
 			path = HomePwner;
@@ -152,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DADE4917EBB41E005AD206 /* InfoPlist.strings in Resources */,
+				945C6E2917ED53F600DB6C56 /* FooterView.xib in Resources */,
+				945C6E0A17ECDD8E00DB6C56 /* HeaderView.xib in Resources */,
 				94DADE5117EBB41E005AD206 /* Default.png in Resources */,
 				94DADE5317EBB41E005AD206 /* Default@2x.png in Resources */,
 				94DADE5517EBB41E005AD206 /* Default-568h@2x.png in Resources */,
@@ -167,6 +190,9 @@
 			files = (
 				94DADE4B17EBB41E005AD206 /* main.m in Sources */,
 				94DADE4F17EBB41E005AD206 /* HomePwnerAppDelegate.m in Sources */,
+				94DADE5D17EBBA97005AD206 /* ItemsViewController.m in Sources */,
+				94DADE6017EBBE18005AD206 /* BNRItem.m in Sources */,
+				94DADE6317EBBF8E005AD206 /* BNRItemStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +309,7 @@
 				94DADE5A17EBB41E005AD206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
