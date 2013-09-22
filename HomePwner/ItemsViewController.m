@@ -9,6 +9,7 @@
 #import "ItemsViewController.h"
 #import "BNRItem.h"
 #import "BNRItemStore.h"
+#import "DetailViewController.h"
 
 @interface ItemsViewController ()
 
@@ -23,6 +24,17 @@
         for (int i=0; i<5; i++) {
             [[BNRItemStore sharedStore] createItem];
         }
+        UINavigationItem *n = [self navigationItem];
+        [n setTitle:@"Homepwner"];
+        
+        // Create a button to add a new item
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                     target:self
+                                                     action:@selector(addNewItem:)];
+        // Set it as the right item in navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
     return self;
 }
@@ -56,42 +68,18 @@
     return cell;
 }
 
-- (UIView *)headerView
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // If we haven't loaded headerView yet
-    if (!headerView) {
-        // Load it
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return headerView;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return [self headerView];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return [[self headerView] bounds].size.height;
-}
-
-
-// Toggles editing mode on the UITableView for allItems
-- (IBAction)toggleEditingMode:(id)sender
-{
-    // If we are currently in editing mode
-    if ([self isEditing]) {
-        // Change the text of the button to inform the user of the state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        // Change text of button
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-    }
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    // Add the BNRItems array and find the specified BNRItem
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = [items objectAtIndex:[indexPath row]];
+    
+    // Give the details view controller a pointer to the item
+    [detailViewController setItem:selectedItem];
+    
+    [[self navigationController] pushViewController:detailViewController animated:YES];
 }
 
 // Add a new item by clicking the button at top
@@ -110,6 +98,7 @@
                             withRowAnimation:UITableViewRowAnimationTop];
 }
 
+// Commits the deletion request
 -   (void)tableView:(UITableView *)tableView
  commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
   forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,6 +125,15 @@
                                         toIndex:[destinationIndexPath row]];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
+}
+
+
+// Formatting, header and footer
+
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"Remove";
@@ -146,12 +144,22 @@
     return self.footerView;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return [[self footerView] bounds].size.height;
+}
+
 - (UIView *)footerView
 {
     if (!footerView) {
         [[NSBundle mainBundle] loadNibNamed:@"FooterView" owner:self options:nil];
     }
     return footerView;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Items";
 }
 
 @end

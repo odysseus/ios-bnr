@@ -10,14 +10,10 @@
 
 @interface ItemsViewController : UITableViewController
 {
-    IBOutlet UIView *headerView;
     IBOutlet UIView *footerView;
 }
 
-- (UIView *)headerView;
 - (UIView *)footerView;
 - (IBAction)addNewItem:(id)sender;
-- (IBAction)toggleEditingMode:(id)sender;
-
 
 @end
