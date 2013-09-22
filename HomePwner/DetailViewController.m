@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "BNRItem.h"
 #import "DatePickerViewController.h"
+#import "BNRImageStore.h"
 
 @interface DetailViewController ()
 
@@ -40,6 +41,20 @@
     
     // Now use the date formatter and the dateCreated to set the dateLabel
     [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+    
+    NSString *imageKey = [item imageKey];
+    
+    if (imageKey) {
+        // Get image for image key from image store
+        UIImage *imageToDisplay =
+        [[BNRImageStore sharedStore] imageForKey:imageKey];
+        
+        // Use that image to put on the screen in imageView
+        [imageView setImage:imageToDisplay];
+    } else {
+        // Clear the imageView
+        [imageView setImage:nil];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -94,14 +109,74 @@
     
     [imagePicker setDelegate:self];
     
+    // Bronze Challenge: Allow Editing
+    // I don't like this approach because it requires the picture to be cropped to the
+    // size of the imageView so I commented it out
+//    [imagePicker setAllowsEditing:YES];
+    
     // Place image picker on the screen
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+- (IBAction)backgroundTapped:(id)sender
+{
+    [[self view] endEditing:YES];
+}
+
+- (IBAction)removeImage:(id)sender
+{
+    // First fetch the image ket for the current item
+    NSString *key = [item imageKey];
+    // If there is no key, do nothing
+    if (!key) {
+        return;
+    // If there is:
+    } else {
+        // Delete the image from the BNRImageStore
+        [[BNRImageStore sharedStore] deleteImageForKey:key];
+        // Remove the key from the BNRItem
+        [item setImageKey:nil];
+        // Set the imageView image to nil, which redraws the screen as well
+        [imageView setImage:nil];
+        [imageView setNeedsDisplay];
+    }
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    NSString *oldKey = [item imageKey];
+    
+    // Did the item already have an image?
+    if (oldKey) {
+        
+        // Delete the old image
+        [[BNRImageStore sharedStore] deleteImageForKey:oldKey];
+    }
+    
     // Get picked image from info dictionary
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Bronze Challenge: choose the edited image instead of the original
+//    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+
+    
+    // Create a unique identifier string
+    CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
+    
+    CFStringRef newUniqueIDString =
+    CFUUIDCreateString (kCFAllocatorDefault, newUniqueID);
+    
+    // Use that unique ID to set our item's imageKey
+    NSString *key = (__bridge NSString *)newUniqueIDString;
+    [item setImageKey:key];
+    
+    // Store image in the BNRImageStore with this key
+    [[BNRImageStore sharedStore] setImage:image
+                                   forKey:[item imageKey]];
+    
+    // CFRelease is needed to prevent a memory leak when using Core Foundation objects
+    CFRelease(newUniqueIDString);
+    CFRelease(newUniqueID);
     
     // Put that image onto the screen in our image view
     [imageView setImage:image];

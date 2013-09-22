@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSDate *dateCreated;
 @property (nonatomic, weak) BNRItem *container;
 @property (nonatomic, strong) BNRItem *containedItem;
+@property (nonatomic, copy) NSString *imageKey;
 
 // Setters and Getters that override the synthesized methods
 - (void)setContainedItem:(BNRItem *)i;

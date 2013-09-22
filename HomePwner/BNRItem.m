@@ -9,7 +9,8 @@
 #import "BNRItem.h"
 
 @implementation BNRItem
-@synthesize itemName, serialNumber, valueInDollars, dateCreated, containedItem, container;
+@synthesize itemName, serialNumber, valueInDollars, dateCreated, containedItem,
+    container, imageKey;
 
 - (void)setContainedItem:(BNRItem *)i
 {
