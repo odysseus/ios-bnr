@@ -80,6 +80,36 @@
                                            animated:YES];
 }
 
+- (IBAction)takePicture:(id)sender
+{
+    // Initialize the UIImagePickerController
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    // If our device has a camera we take a picture, otherwise choose from photo library
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    } else {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    [imagePicker setDelegate:self];
+    
+    // Place image picker on the screen
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // Get picked image from info dictionary
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Put that image onto the screen in our image view
+    [imageView setImage:image];
+    
+    // Dismiss the image picker
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
 
 
