@@ -13,8 +13,6 @@
 		945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */; };
 		945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */; };
 		945C6E3A17EEE36C00DB6C56 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */; };
-		945C6E3E17EFB7FE00DB6C56 /* ZoomedPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3C17EFB7FE00DB6C56 /* ZoomedPictureViewController.m */; };
-		945C6E3F17EFB7FE00DB6C56 /* ZoomedPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E3D17EFB7FE00DB6C56 /* ZoomedPictureViewController.xib */; };
 		94DADE3F17EBB41D005AD206 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE3E17EBB41D005AD206 /* UIKit.framework */; };
 		94DADE4117EBB41D005AD206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE4017EBB41D005AD206 /* Foundation.framework */; };
 		94DADE4317EBB41D005AD206 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE4217EBB41D005AD206 /* CoreGraphics.framework */; };
@@ -39,9 +37,6 @@
 		945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		945C6E3817EEE36C00DB6C56 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
-		945C6E3B17EFB7FD00DB6C56 /* ZoomedPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomedPictureViewController.h; sourceTree = "<group>"; };
-		945C6E3C17EFB7FE00DB6C56 /* ZoomedPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomedPictureViewController.m; sourceTree = "<group>"; };
-		945C6E3D17EFB7FE00DB6C56 /* ZoomedPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZoomedPictureViewController.xib; sourceTree = "<group>"; };
 		94DADE3B17EBB41D005AD206 /* HomePwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DADE3E17EBB41D005AD206 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94DADE4017EBB41D005AD206 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,9 +112,6 @@
 				94DADE4E17EBB41E005AD206 /* HomePwnerAppDelegate.m */,
 				945C6E2C17ED8D5E00DB6C56 /* DetailViewController.h */,
 				945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */,
-				945C6E3B17EFB7FD00DB6C56 /* ZoomedPictureViewController.h */,
-				945C6E3C17EFB7FE00DB6C56 /* ZoomedPictureViewController.m */,
-				945C6E3D17EFB7FE00DB6C56 /* ZoomedPictureViewController.xib */,
 				945C6E3817EEE36C00DB6C56 /* BNRImageStore.h */,
 				945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */,
 				945C6E3317EEB3B600DB6C56 /* DatePickerViewController.h */,
@@ -199,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DADE4917EBB41E005AD206 /* InfoPlist.strings in Resources */,
-				945C6E3F17EFB7FE00DB6C56 /* ZoomedPictureViewController.xib in Resources */,
 				945C6E2917ED53F600DB6C56 /* FooterView.xib in Resources */,
 				945C6E3017ED8D5E00DB6C56 /* DetailViewController.xib in Resources */,
 				94DADE5117EBB41E005AD206 /* Default.png in Resources */,
@@ -218,7 +209,6 @@
 			files = (
 				94DADE4B17EBB41E005AD206 /* main.m in Sources */,
 				945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */,
-				945C6E3E17EFB7FE00DB6C56 /* ZoomedPictureViewController.m in Sources */,
 				94DADE4F17EBB41E005AD206 /* HomePwnerAppDelegate.m in Sources */,
 				94DADE5D17EBBA97005AD206 /* ItemsViewController.m in Sources */,
 				945C6E3A17EEE36C00DB6C56 /* BNRImageStore.m in Sources */,
