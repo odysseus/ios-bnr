@@ -32,9 +32,24 @@
     self = [super init];
     if (self) {
         dictionary = [[NSMutableDictionary alloc] init];
+        
+        // Signing up to receive memory warning notifications
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self
+               selector:@selector(clearCache:)
+                   name:UIApplicationDidReceiveMemoryWarningNotification
+                 object:nil];
     }
-    
     return self;
+}
+
+// The method that will be run when a memory notification is sent
+// clears all the images from the cache, they can be reloaded from hard
+// storage later.
+- (void)clearCache:(NSNotification *)note
+{
+    NSLog(@"flushing %d images out of the cache", [dictionary count]);
+    [dictionary removeAllObjects];
 }
 
 // The following methods allow getting and setting images
