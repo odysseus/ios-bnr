@@ -166,6 +166,11 @@
     return @"Items";
 }
 
+- (BOOL)disablesAutomaticKeyboardDismissal
+{
+    return NO;
+}
+
 @end
 
 

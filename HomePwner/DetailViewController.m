@@ -306,6 +306,11 @@
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
 
+- (BOOL)disablesAutomaticKeyboardDismissal
+{
+    return NO;
+}
+
 @end
 
 
