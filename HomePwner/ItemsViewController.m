@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRItemStore.h"
 #import "DetailViewController.h"
+#import "NewItemNavController.h"
 
 @interface ItemsViewController ()
 
@@ -94,7 +95,7 @@
         [[self tableView] reloadData];}
      ];
     
-    UINavigationController *navController = [[UINavigationController alloc]
+    NewItemNavController *navController = [[NewItemNavController alloc]
                                              initWithRootViewController:detailViewController];
     [navController setModalPresentationStyle:UIModalPresentationFormSheet];
     [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];

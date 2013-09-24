@@ -181,6 +181,7 @@
 
 - (IBAction)backgroundTapped:(id)sender
 {
+    NSLog(@"Background tapped");
     [[self view] endEditing:YES];
 }
 
