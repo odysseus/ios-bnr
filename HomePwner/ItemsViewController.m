@@ -21,9 +21,6 @@
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        for (int i=0; i<5; i++) {
-            [[BNRItemStore sharedStore] createItem];
-        }
         UINavigationItem *n = [self navigationItem];
         [n setTitle:@"Homepwner"];
         

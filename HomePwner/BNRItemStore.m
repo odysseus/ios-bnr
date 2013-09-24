@@ -28,7 +28,12 @@
 {
     self = [super init];
     if (self) {
-        allItems = [[NSMutableArray alloc] init];
+        NSString *path = [self itemArchivePath];
+        allItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        
+        // If the array hadn't been saved previously, create a new empty one
+        if (!allItems)
+            allItems = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -40,7 +45,7 @@
 
 - (BNRItem *)createItem
 {
-    BNRItem *p = [BNRItem randomItem];
+    BNRItem *p = [[BNRItem alloc] init];
     [allItems addObject:p];
     return p;
 }
@@ -79,6 +84,17 @@
     NSString *documentDirectory = [documentDirectories objectAtIndex:0];
     
     return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
+
+// Save all items in the BNRItemStore, which will save new items and changes to old
+// ones all in one fell swoop
+- (BOOL)saveChanges
+{
+    // returns success or failure
+    NSString *path = [self itemArchivePath];
+    
+    return [NSKeyedArchiver archiveRootObject:allItems
+                                       toFile:path];
 }
 
 @end
