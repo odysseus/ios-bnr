@@ -65,6 +65,22 @@
     [allItems insertObject:p atIndex:to];
 }
 
+// Constructs a path to a file where BNRItems can be saved
+- (NSString *)itemArchivePath;
+{
+    NSArray *documentDirectories =
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                        NSUserDomainMask, YES);
+    
+    // Get one and only document directory from that list
+    // There is only one, despite being in a array, because the function is shared
+    // with OSX, where there might be multiple matching directories, on iOS there
+    // will only be one, like a singleton, or a highlander
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    
+    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
+
 @end
 
 

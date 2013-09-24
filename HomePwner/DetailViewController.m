@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "DatePickerViewController.h"
 #import "BNRImageStore.h"
+#import "BNRItemStore.h"
 
 @interface DetailViewController ()
 
@@ -17,7 +18,16 @@
 
 @implementation DetailViewController
 
-@synthesize item;
+@synthesize item, dismissBlock;
+
+// Override the initializer to throw an exception if the wrong init method is called
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle
+{
+    @throw [NSException exceptionWithName:@"Wrong initializer"
+                                   reason:@"Use initForNewItem:"
+                                 userInfo:nil];
+    return nil;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -38,9 +48,12 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    
     // Now use the date formatter and the dateCreated to set the dateLabel
     [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+    
+    // Setting the aspect mode property of the imageView button programatically so that
+    // it displays the image inside it properly
+    [imageView.imageView setContentMode:UIViewContentModeScaleAspectFit];
     
     NSString *imageKey = [item imageKey];
     
@@ -50,10 +63,10 @@
         [[BNRImageStore sharedStore] imageForKey:imageKey];
         
         // Use that image to put on the screen in imageView
-        [imageView setImage:imageToDisplay];
+        [imageView setImage:imageToDisplay forState:UIControlStateNormal];
     } else {
         // Clear the imageView
-        [imageView setImage:nil];
+        [imageView setImage:nil forState:UIControlStateNormal];
     }
 }
 
@@ -68,6 +81,27 @@
     [item setItemName:[nameField text]];
     [item setSerialNumber:[serialField text]];
     [item setValueInDollars:[[valueField text] intValue]];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    UIColor *clr = nil;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        clr = [UIColor colorWithRed:0.875 green:0.88 blue:0.91 alpha:1];
+    } else {
+        clr = [UIColor groupTableViewBackgroundColor];
+    }
+    [[self view] setBackgroundColor:clr];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        return UIInterfaceOrientationMaskAll;
+    } else {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
 }
 
 - (void)setItem:(BNRItem *)i
@@ -97,6 +131,15 @@
 
 - (IBAction)takePicture:(id)sender
 {
+    // This code prevents the app from crashing if the camera button is pressed when the
+    // popup controller is already displayed.
+    if ([imagePickerPopover isPopoverVisible]) {
+        // If the popover is already up, get rid of it
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+        return;
+    }
+    
     // Initialize the UIImagePickerController
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
@@ -112,10 +155,28 @@
     // Bronze Challenge: Allow Editing
     // I don't like this approach because it requires the picture to be cropped to the
     // size of the imageView so I commented it out
-//    [imagePicker setAllowsEditing:YES];
+    // [imagePicker setAllowsEditing:YES];
     
     // Place image picker on the screen
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    // Check for iPad device before instantiating the popover controller
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // Create a new popover controller that will display the imagePicker
+        imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        [imagePickerPopover setDelegate:self];
+        
+        // Display the popover controller, sender is the camera bar button item
+        [imagePickerPopover presentPopoverFromBarButtonItem:sender
+                                   permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                   animated:YES];
+    } else {
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"User dismissed popover");
+    imagePickerPopover = nil;
 }
 
 - (IBAction)backgroundTapped:(id)sender
@@ -137,8 +198,27 @@
         // Remove the key from the BNRItem
         [item setImageKey:nil];
         // Set the imageView image to nil, which redraws the screen as well
-        [imageView setImage:nil];
+        [imageView setImage:nil forState:UIControlStateNormal];
         [imageView setNeedsDisplay];
+    }
+}
+
+- (IBAction)showZoomedPicture:(id)sender
+{
+    if ([item imageKey]) {
+        UIViewController *zoomedPictureViewController = [[UIViewController alloc] init];
+        zoomedPictureViewController.view.frame = self.view.frame;
+        UIImage *image = [[BNRImageStore sharedStore] imageForKey:[item imageKey]];
+        
+        UIImageView *zoomedPictureView = [[UIImageView alloc] initWithImage:image];
+        [zoomedPictureView setContentMode:UIViewContentModeScaleAspectFit];
+        
+        zoomedPictureView.frame = zoomedPictureViewController.view.frame;
+        [zoomedPictureViewController.view addSubview:zoomedPictureView];
+        
+        [self.navigationController pushViewController:zoomedPictureViewController animated:YES];
+    } else {
+        return;
     }
 }
 
@@ -179,10 +259,51 @@
     CFRelease(newUniqueID);
     
     // Put that image onto the screen in our image view
-    [imageView setImage:image];
+    [imageView setImage:image forState:UIControlStateNormal];
     
-    // Dismiss the image picker
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // If on the phone, the image picker is presented modally. Dismiss it.
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        // If on the pad, the image picker is in the popover. Dismiss the popover.
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+    }
+}
+
+- (id)initForNewItem:(BOOL)isNew;
+{
+    self = [super initWithNibName:@"DetailViewController" bundle:nil];
+    
+    if (self) {
+        if (isNew) {
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc]
+                    initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                         target:self
+                                         action:@selector(save:)];
+            [[self navigationItem] setRightBarButtonItem:doneItem];
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                           target:self
+                                           action:@selector(cancel:)];
+            [[self navigationItem] setLeftBarButtonItem:cancelItem];
+        }
+    }
+    return self;
+}
+
+- (void)save:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
+}
+
+- (void)cancel:(id)sender
+{
+    // If the user cancelled, then remove the BNRItem from the store
+    [[BNRItemStore sharedStore] removeItem:item];
+    // Then dismiss the view controller
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
 
 @end
