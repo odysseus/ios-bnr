@@ -237,6 +237,9 @@
     // Get picked image from info dictionary
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    // Create a thumbnail for the row view display
+    [item setThumbnailDataFromImage:image];
+    
     // Bronze Challenge: choose the edited image instead of the original
 //    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
 

@@ -10,4 +10,9 @@
 
 @interface HomePwnerItemCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
 @end

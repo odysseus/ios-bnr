@@ -17,8 +17,10 @@
 @property (nonatomic, weak) BNRItem *container;
 @property (nonatomic, strong) BNRItem *containedItem;
 @property (nonatomic, copy) NSString *imageKey;
+@property (nonatomic, strong) UIImage *thumbnail;
+@property (nonatomic, strong) NSData *thumbnailData;
 
-// Setters and Getters that override the synthesized methods
+
 - (void)setContainedItem:(BNRItem *)i;
 - (void)dealloc;
 - (id)init;
@@ -27,6 +29,7 @@
           serialNumber:(NSString *)serial;
 - (id)initWithItemName:(NSString *)name
           serialNumber:(NSString *)serial;
+- (void)setThumbnailDataFromImage:(UIImage *)image;
 
 + (id)randomItem;
 
