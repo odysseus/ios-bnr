@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *serialLabel;
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 
+- (IBAction)showImage:(id)sender;
+
 @end
