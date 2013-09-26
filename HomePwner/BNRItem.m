@@ -123,6 +123,7 @@
         [self setValueInDollars:[aDecoder decodeIntForKey:@"valueInDollars"]];
         
         dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
+        thumbnailData = [aDecoder decodeObjectForKey:@"thumbnailData"];
     }
     return self;
 }
@@ -133,7 +134,6 @@
     if (!thumbnailData) {
         return nil;
     }
-    
     // If the thumbnail has not been created from data, do so now
     if (!thumbnail) {
         // Create the image from data
@@ -147,7 +147,7 @@
     CGSize origImageSize = [image size];
     
     // The rectangle of the thumbnail
-    CGRect newRect = CGRectMake(0, 0, 40, 40);
+    CGRect newRect = CGRectMake(0, 0, 36, 36);
     
     // Figure out a scaling ratio to make sure we maintain the same aspect ratio
     float ratio = MAX(newRect.size.width / origImageSize.width,

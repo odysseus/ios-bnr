@@ -15,5 +15,6 @@
 
 - (UIView *)footerView;
 - (IBAction)addNewItem:(id)sender;
+- (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip;
 
 @end

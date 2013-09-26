@@ -74,6 +74,8 @@
     [[cell serialLabel] setText:[p serialNumber]];
     [[cell valueLabel] setText: [NSString stringWithFormat:@"$%d", [p valueInDollars]]];
     [[cell thumbnailView] setImage:[p thumbnail]];
+    [cell setController:self];
+    [cell setTableView:tableView];
     
     return cell;
 }
@@ -183,6 +185,12 @@
 {
     return NO;
 }
+
+- (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
+{
+    NSLog(@"Going to show the image for %@", ip);
+}
+
 
 @end
 
