@@ -203,34 +203,38 @@
             NSLog(@"No image found");
             return;
         }
-        // Make a frame relative to the button pressed
-        CGRect rect = [[self view] convertRect:[sender bounds] fromView:sender];
         
-        // Create a new ImageViewController and set its image
-        ImageViewController *ivc = [[ImageViewController alloc] init];
-        [ivc setImage:img];
+        // The Popover controller refuses to display the images for reasons only god knows
+        // pushing another view controller onto the stack is a good temporary solution
+        UIViewController *zoomedPictureViewController = [[UIViewController alloc] init];
+        zoomedPictureViewController.view.frame = self.view.frame;
+        UIImage *image = img;
         
-//        UIViewController *zoomedPictureViewController = [[UIViewController alloc] init];
-//        zoomedPictureViewController.view.frame = self.view.frame;
-//        UIImage *image = [UIImage imageNamed:@"OMFG.jpg"];
-//        
-//        UIImageView *zoomedPictureView = [[UIImageView alloc] initWithImage:image];
-//        [zoomedPictureView setContentMode:UIViewContentModeScaleAspectFit];
-//        
-//        zoomedPictureView.frame = zoomedPictureViewController.view.frame;
-//        [zoomedPictureViewController.view addSubview:zoomedPictureView];
-//        
-//        [self.navigationController pushViewController:zoomedPictureViewController animated:YES];
+        UIImageView *zoomedPictureView = [[UIImageView alloc] initWithImage:image];
+        [zoomedPictureView setContentMode:UIViewContentModeScaleAspectFit];
         
-        // Present a 600x600 popover for the rect
-        imagePopover = [[UIPopoverController alloc]
-                        initWithContentViewController:ivc];
-        [imagePopover setDelegate:self];
-        [imagePopover setPopoverContentSize:CGSizeMake(600, 600)];
-        [imagePopover presentPopoverFromRect:rect
-                                      inView:[self view]
-                    permittedArrowDirections:UIPopoverArrowDirectionAny
-                                    animated:YES];
+        zoomedPictureView.frame = zoomedPictureViewController.view.frame;
+        [zoomedPictureViewController.view addSubview:zoomedPictureView];
+        
+        [self.navigationController pushViewController:zoomedPictureViewController animated:YES];
+        
+//        // Make a frame relative to the button pressed
+//        CGRect rect = [[self view] convertRect:[sender bounds] fromView:sender];
+//        
+//        // Create a new ImageViewController and set its image
+//        ImageViewController *ivc = [[ImageViewController alloc] init];
+//        [ivc setImage:img];
+//
+//        
+//        // Present a 600x600 popover for the rect
+//        imagePopover = [[UIPopoverController alloc]
+//                        initWithContentViewController:ivc];
+//        [imagePopover setDelegate:self];
+//        [imagePopover setPopoverContentSize:CGSizeMake(600, 600)];
+//        [imagePopover presentPopoverFromRect:rect
+//                                      inView:[self view]
+//                    permittedArrowDirections:UIPopoverArrowDirectionAny
+//                                    animated:YES];
     }
 }
 

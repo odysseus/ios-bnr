@@ -7,7 +7,6 @@
 //
 
 #import "HomePwnerItemCell.h"
-#import "ItemsViewController.h"
 
 @implementation HomePwnerItemCell
 
@@ -52,6 +51,7 @@
     // String is now "showImage:atIndexPath:"
     // Make a new selector from this string
     SEL newSelector = NSSelectorFromString(selector);
+    NSLog(@"%@", selector);
     // Fetch the index path for this cell
     NSIndexPath *indexPath = [[self tableView] indexPathForCell:self];
     // Verify that the index path and selector exist
@@ -64,6 +64,7 @@
         }
     }
 }
+
 @end
 
 
