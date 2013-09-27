@@ -10,7 +10,7 @@
 
 @implementation HomePwnerItemCell
 
-@synthesize nameLabel, valueLabel, thumbnailView, serialLabel, controller, tableView;
+@synthesize nameLabel, valueLabel, thumbnailView, serialLabel, tableView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -44,25 +44,37 @@
     // This allows greater flexibility with the code (Not tied to a controller class) at the expense
     // of being more error prone, because the compiler can't ensure everything is copasetic.
     
-    // Get the name of this method
+//    // Get the name of this method
+//    NSString *selector = NSStringFromSelector(_cmd);
+//    // Append "atIndexPath:"
+//    selector = [selector stringByAppendingString:@"atIndexPath:"];
+//    // String is now "showImage:atIndexPath:"
+//    // Make a new selector from this string
+//    SEL newSelector = NSSelectorFromString(selector);
+//    NSLog(@"%@", selector);
+//    // Fetch the index path for this cell
+//    NSIndexPath *indexPath = [[self tableView] indexPathForCell:self];
+//    // Verify that the index path and selector exist
+//    if (indexPath) {
+//        if ([[self controller] respondsToSelector:newSelector]) {
+//            // Send the message to the controller
+//            [[self controller] performSelector:newSelector
+//                                    withObject:sender
+//                                    withObject:indexPath];
+//        }
+//    }
+    
+    // Option 3: Use the inherited methods from the BaseCell class to send a message to the
+    // controller by passing a sting for the selector
+
+    // Generate the selector string
     NSString *selector = NSStringFromSelector(_cmd);
-    // Append "atIndexPath:"
     selector = [selector stringByAppendingString:@"atIndexPath:"];
-    // String is now "showImage:atIndexPath:"
-    // Make a new selector from this string
-    SEL newSelector = NSSelectorFromString(selector);
-    NSLog(@"%@", selector);
-    // Fetch the index path for this cell
+    // Get the index path
     NSIndexPath *indexPath = [[self tableView] indexPathForCell:self];
-    // Verify that the index path and selector exist
-    if (indexPath) {
-        if ([[self controller] respondsToSelector:newSelector]) {
-            // Send the message to the controller
-            [[self controller] performSelector:newSelector
-                                    withObject:sender
-                                    withObject:indexPath];
-        }
-    }
+    // Create an array of the arguments
+    NSArray *args = [NSArray arrayWithObjects: sender, indexPath, nil];
+    [self sendSelectorToController:selector withParams:args];
 }
 
 @end

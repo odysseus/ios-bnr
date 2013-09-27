@@ -18,6 +18,7 @@
 		945C6E4717F2656D00DB6C56 /* HomePwnerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */; };
 		947A45EE17F580C500C74FFC /* ImageZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45EC17F580C500C74FFC /* ImageZoomViewController.m */; };
 		947A45EF17F580C500C74FFC /* ImageZoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */; };
+		947A45F217F6128B00C74FFC /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45F117F6128B00C74FFC /* BaseCell.m */; };
 		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
 		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
 		94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB417F5189E00936AB0 /* OMFG.jpg */; };
@@ -53,6 +54,8 @@
 		947A45EB17F580C500C74FFC /* ImageZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageZoomViewController.h; sourceTree = "<group>"; };
 		947A45EC17F580C500C74FFC /* ImageZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageZoomViewController.m; sourceTree = "<group>"; };
 		947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageZoomViewController.xib; sourceTree = "<group>"; };
+		947A45F017F6128B00C74FFC /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
+		947A45F117F6128B00C74FFC /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
 		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				94DADE6217EBBF8E005AD206 /* BNRItemStore.m */,
 				945C6E3817EEE36C00DB6C56 /* BNRImageStore.h */,
 				945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */,
+				947A45F017F6128B00C74FFC /* BaseCell.h */,
+				947A45F117F6128B00C74FFC /* BaseCell.m */,
 				945C6E4317F2650B00DB6C56 /* HomePwnerItemCell.h */,
 				945C6E4417F2650B00DB6C56 /* HomePwnerItemCell.m */,
 				94A09CAF17F4F3E200936AB0 /* ImageViewController.h */,
@@ -247,6 +252,7 @@
 				94DADE4B17EBB41E005AD206 /* main.m in Sources */,
 				945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */,
 				947A45EE17F580C500C74FFC /* ImageZoomViewController.m in Sources */,
+				947A45F217F6128B00C74FFC /* BaseCell.m in Sources */,
 				94DADE4F17EBB41E005AD206 /* HomePwnerAppDelegate.m in Sources */,
 				94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */,
 				945C6E4517F2650B00DB6C56 /* HomePwnerItemCell.m in Sources */,
