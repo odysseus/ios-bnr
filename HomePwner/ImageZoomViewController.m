@@ -1,14 +1,19 @@
 //
-//  ImageViewController.m
+//  ImageZoomViewController.m
 //  HomePwner
 //
-//  Created by Ryan Case on 9/26/13.
+//  Created by Ryan Case on 9/27/13.
 //  Copyright (c) 2013 Ryan Case. All rights reserved.
 //
 
-#import "ImageViewController.h"
+#import "ImageZoomViewController.h"
 
-@implementation ImageViewController
+@interface ImageZoomViewController ()
+
+@end
+
+@implementation ImageZoomViewController
+
 @synthesize image;
 
 - (void)viewWillAppear:(BOOL)animated
@@ -18,8 +23,9 @@
     CGSize sz = [[self image] size];
     [scrollView setContentSize:sz];
     imageView.frame = scrollView.bounds;
-    
     [imageView setImage:[self image]];
+    
+    [self.view addSubview:scrollView];
 }
 
 - (void)viewDidLoad {

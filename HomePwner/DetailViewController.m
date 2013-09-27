@@ -11,6 +11,7 @@
 #import "DatePickerViewController.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+#import "ImageZoomViewController.h"
 
 @interface DetailViewController ()
 
@@ -205,15 +206,11 @@
 - (IBAction)showZoomedPicture:(id)sender
 {
     if ([item imageKey]) {
-        UIViewController *zoomedPictureViewController = [[UIViewController alloc] init];
+        UIImage *img = [[BNRImageStore sharedStore] imageForKey:[item imageKey]];
+        
+        ImageZoomViewController *zoomedPictureViewController = [[ImageZoomViewController alloc] init];
         zoomedPictureViewController.view.frame = self.view.frame;
-        UIImage *image = [[BNRImageStore sharedStore] imageForKey:[item imageKey]];
-        
-        UIImageView *zoomedPictureView = [[UIImageView alloc] initWithImage:image];
-        [zoomedPictureView setContentMode:UIViewContentModeScaleAspectFit];
-        
-        zoomedPictureView.frame = zoomedPictureViewController.view.frame;
-        [zoomedPictureViewController.view addSubview:zoomedPictureView];
+        [zoomedPictureViewController setImage:img];
         
         [self.navigationController pushViewController:zoomedPictureViewController animated:YES];
     } else {
