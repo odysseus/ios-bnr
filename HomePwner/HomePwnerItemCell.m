@@ -7,6 +7,7 @@
 //
 
 #import "HomePwnerItemCell.h"
+#import "ItemsViewController.h"
 
 @implementation HomePwnerItemCell
 
@@ -32,6 +33,18 @@
 // Also an example of working with selector methods
 - (IBAction)showImage:(id)sender
 {
+    // This method is intentionally messy to show two different ways of processing
+    // the button press through the controller.
+    // Option 1: Import the controller up top and process the button press normally by
+    // calling [self controller] and then passing in the method and arguments
+    
+//    [[self controller] showImage:sender atIndexPath:[[self tableView] indexPathForCell:self]];
+    
+    // Option 2: Using various selector manipulation methods, construct a string with the selector
+    // name, convert it, and pass it to the controller directly, without importing the header file.
+    // This allows greater flexibility with the code (Not tied to a controller class) at the expense
+    // of being more error prone, because the compiler can't ensure everything is copasetic.
+    
     // Get the name of this method
     NSString *selector = NSStringFromSelector(_cmd);
     // Append "atIndexPath:"
@@ -52,3 +65,23 @@
     }
 }
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

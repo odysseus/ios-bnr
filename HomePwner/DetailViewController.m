@@ -175,13 +175,11 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
-    NSLog(@"User dismissed popover");
     imagePickerPopover = nil;
 }
 
 - (IBAction)backgroundTapped:(id)sender
 {
-    NSLog(@"Background tapped");
     [[self view] endEditing:YES];
 }
 

@@ -16,6 +16,9 @@
 		945C6E4217F167F500DB6C56 /* NewItemNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E4117F167F500DB6C56 /* NewItemNavController.m */; };
 		945C6E4517F2650B00DB6C56 /* HomePwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E4417F2650B00DB6C56 /* HomePwnerItemCell.m */; };
 		945C6E4717F2656D00DB6C56 /* HomePwnerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */; };
+		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
+		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
+		94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB417F5189E00936AB0 /* OMFG.jpg */; };
 		94DADE3F17EBB41D005AD206 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE3E17EBB41D005AD206 /* UIKit.framework */; };
 		94DADE4117EBB41D005AD206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE4017EBB41D005AD206 /* Foundation.framework */; };
 		94DADE4317EBB41D005AD206 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE4217EBB41D005AD206 /* CoreGraphics.framework */; };
@@ -45,6 +48,10 @@
 		945C6E4317F2650B00DB6C56 /* HomePwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePwnerItemCell.h; sourceTree = "<group>"; };
 		945C6E4417F2650B00DB6C56 /* HomePwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePwnerItemCell.m; sourceTree = "<group>"; };
 		945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePwnerItemCell.xib; sourceTree = "<group>"; };
+		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		94A09CB417F5189E00936AB0 /* OMFG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = OMFG.jpg; sourceTree = "<group>"; };
 		94DADE3B17EBB41D005AD206 /* HomePwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DADE3E17EBB41D005AD206 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94DADE4017EBB41D005AD206 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +127,8 @@
 				945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */,
 				945C6E4317F2650B00DB6C56 /* HomePwnerItemCell.h */,
 				945C6E4417F2650B00DB6C56 /* HomePwnerItemCell.m */,
+				94A09CAF17F4F3E200936AB0 /* ImageViewController.h */,
+				94A09CB017F4F3E200936AB0 /* ImageViewController.m */,
 				94DADE5B17EBBA97005AD206 /* ItemsViewController.h */,
 				94DADE5C17EBBA97005AD206 /* ItemsViewController.m */,
 				945C6E4017F167F500DB6C56 /* NewItemNavController.h */,
@@ -128,6 +137,7 @@
 				945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */,
 				945C6E3317EEB3B600DB6C56 /* DatePickerViewController.h */,
 				945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */,
+				94A09CB117F4F3E200936AB0 /* ImageViewController.xib */,
 				945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */,
 				945C6E2E17ED8D5E00DB6C56 /* DetailViewController.xib */,
 				945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */,
@@ -140,6 +150,7 @@
 		94DADE4517EBB41E005AD206 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94A09CB417F5189E00936AB0 /* OMFG.jpg */,
 				94DADE4617EBB41E005AD206 /* HomePwner-Info.plist */,
 				94DADE4717EBB41E005AD206 /* InfoPlist.strings */,
 				94DADE4A17EBB41E005AD206 /* main.m */,
@@ -204,7 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DADE4917EBB41E005AD206 /* InfoPlist.strings in Resources */,
+				94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */,
 				945C6E2917ED53F600DB6C56 /* FooterView.xib in Resources */,
+				94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */,
 				945C6E4717F2656D00DB6C56 /* HomePwnerItemCell.xib in Resources */,
 				945C6E3017ED8D5E00DB6C56 /* DetailViewController.xib in Resources */,
 				94DADE5117EBB41E005AD206 /* Default.png in Resources */,
@@ -225,6 +238,7 @@
 				94DADE4B17EBB41E005AD206 /* main.m in Sources */,
 				945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */,
 				94DADE4F17EBB41E005AD206 /* HomePwnerAppDelegate.m in Sources */,
+				94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */,
 				945C6E4517F2650B00DB6C56 /* HomePwnerItemCell.m in Sources */,
 				94DADE5D17EBBA97005AD206 /* ItemsViewController.m in Sources */,
 				945C6E3A17EEE36C00DB6C56 /* BNRImageStore.m in Sources */,

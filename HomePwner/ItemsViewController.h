@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ItemsViewController : UITableViewController
+    <UIPopoverControllerDelegate>
 {
     IBOutlet UIView *footerView;
+    UIPopoverController *imagePopover;
 }
 
 - (UIView *)footerView;

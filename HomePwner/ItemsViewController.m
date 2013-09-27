@@ -9,9 +9,11 @@
 #import "ItemsViewController.h"
 #import "BNRItem.h"
 #import "BNRItemStore.h"
+#import "BNRImageStore.h"
 #import "DetailViewController.h"
 #import "NewItemNavController.h"
 #import "HomePwnerItemCell.h"
+#import "ImageViewController.h"
 
 @interface ItemsViewController ()
 
@@ -70,12 +72,17 @@
                                dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
     
     // Configure the cell with the BNRItem
+    [cell setController:self];
+    [cell setTableView:tableView];
     [[cell nameLabel] setText:[p itemName]];
     [[cell serialLabel] setText:[p serialNumber]];
     [[cell valueLabel] setText: [NSString stringWithFormat:@"$%d", [p valueInDollars]]];
     [[cell thumbnailView] setImage:[p thumbnail]];
-    [cell setController:self];
-    [cell setTableView:tableView];
+    if ([p valueInDollars] > 50) {
+        [[cell valueLabel] setTextColor:[UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
+    } else {
+        [[cell valueLabel] setTextColor:[UIColor colorWithRed:0.7 green:0.0 blue:0.0 alpha:1.0]];
+    }
     
     return cell;
 }
@@ -150,7 +157,6 @@
     [[self tableView] reloadData];
 }
 
-
 // Formatting, header and footer
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -188,9 +194,51 @@
 
 - (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
 {
-    NSLog(@"Going to show the image for %@", ip);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // Get the BNRItem from the index path
+        BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
+        // Make sure there's an image, if not don't display anything
+        UIImage *img = [[BNRImageStore sharedStore] imageForKey:[i imageKey]];
+        if (!img) {
+            NSLog(@"No image found");
+            return;
+        }
+        // Make a frame relative to the button pressed
+        CGRect rect = [[self view] convertRect:[sender bounds] fromView:sender];
+        
+        // Create a new ImageViewController and set its image
+        ImageViewController *ivc = [[ImageViewController alloc] init];
+        [ivc setImage:img];
+        
+//        UIViewController *zoomedPictureViewController = [[UIViewController alloc] init];
+//        zoomedPictureViewController.view.frame = self.view.frame;
+//        UIImage *image = [UIImage imageNamed:@"OMFG.jpg"];
+//        
+//        UIImageView *zoomedPictureView = [[UIImageView alloc] initWithImage:image];
+//        [zoomedPictureView setContentMode:UIViewContentModeScaleAspectFit];
+//        
+//        zoomedPictureView.frame = zoomedPictureViewController.view.frame;
+//        [zoomedPictureViewController.view addSubview:zoomedPictureView];
+//        
+//        [self.navigationController pushViewController:zoomedPictureViewController animated:YES];
+        
+        // Present a 600x600 popover for the rect
+        imagePopover = [[UIPopoverController alloc]
+                        initWithContentViewController:ivc];
+        [imagePopover setDelegate:self];
+        [imagePopover setPopoverContentSize:CGSizeMake(600, 600)];
+        [imagePopover presentPopoverFromRect:rect
+                                      inView:[self view]
+                    permittedArrowDirections:UIPopoverArrowDirectionAny
+                                    animated:YES];
+    }
 }
 
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [imagePopover dismissPopoverAnimated:YES];
+    imagePopover = nil;
+}
 
 @end
 
