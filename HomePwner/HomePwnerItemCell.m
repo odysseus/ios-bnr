@@ -32,8 +32,9 @@
 // Also an example of working with selector methods
 - (IBAction)showImage:(id)sender
 {
-    // This method is intentionally messy to show two different ways of processing
+    // This method is intentionally messy to show three different ways of processing
     // the button press through the controller.
+    
     // Option 1: Import the controller up top and process the button press normally by
     // calling [self controller] and then passing in the method and arguments
     
@@ -65,7 +66,11 @@
 //    }
     
     // Option 3: Use the inherited methods from the BaseCell class to send a message to the
-    // controller by passing a sting for the selector
+    // controller by passing a sting for the selector. The process here is almost identical
+    // to the performSelector method, but the functionality is built into the class, and it
+    // doesn't generate a memory warning. To be honest approach #2 and #3 seem like solutions
+    // in search of a real problem, but maybe in larger apps the controller passing
+    // functionality is more useful
 
     // Generate the selector string
     NSString *selector = NSStringFromSelector(_cmd);

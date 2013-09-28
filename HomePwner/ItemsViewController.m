@@ -195,8 +195,6 @@
 
 - (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
 {
-    NSLog(@"Going to show the image for %@", ip);
-    
     // Get the item for the index path
     BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
     

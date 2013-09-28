@@ -15,10 +15,6 @@
 {
     [super viewWillAppear:animated];
     
-    CGSize sz = [[self image] size];
-    [scrollView setContentSize:sz];
-    imageView.frame = scrollView.bounds;
-    
     [imageView setImage:[self image]];
 }
 
