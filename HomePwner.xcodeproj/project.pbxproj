@@ -19,6 +19,8 @@
 		947A45EE17F580C500C74FFC /* ImageZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45EC17F580C500C74FFC /* ImageZoomViewController.m */; };
 		947A45EF17F580C500C74FFC /* ImageZoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */; };
 		947A45F217F6128B00C74FFC /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45F117F6128B00C74FFC /* BaseCell.m */; };
+		947A45F417F6A32200C74FFC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947A45F317F6A32200C74FFC /* CoreData.framework */; };
+		947A45F717F6AE8500C74FFC /* HomePwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */; };
 		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
 		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
 		94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB417F5189E00936AB0 /* OMFG.jpg */; };
@@ -56,6 +58,8 @@
 		947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageZoomViewController.xib; sourceTree = "<group>"; };
 		947A45F017F6128B00C74FFC /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
 		947A45F117F6128B00C74FFC /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
+		947A45F317F6A32200C74FFC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		947A45F617F6AE8500C74FFC /* HomePwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomePwner.xcdatamodel; sourceTree = "<group>"; };
 		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947A45F417F6A32200C74FFC /* CoreData.framework in Frameworks */,
 				94DADE3F17EBB41D005AD206 /* UIKit.framework in Frameworks */,
 				94DADE4117EBB41D005AD206 /* Foundation.framework in Frameworks */,
 				94DADE4317EBB41D005AD206 /* CoreGraphics.framework in Frameworks */,
@@ -98,6 +103,7 @@
 		94DADE3217EBB41D005AD206 = {
 			isa = PBXGroup;
 			children = (
+				947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */,
 				94DADE4417EBB41D005AD206 /* HomePwner */,
 				94DADE3D17EBB41D005AD206 /* Frameworks */,
 				94DADE3C17EBB41D005AD206 /* Products */,
@@ -115,6 +121,7 @@
 		94DADE3D17EBB41D005AD206 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				947A45F317F6A32200C74FFC /* CoreData.framework */,
 				94DADE3E17EBB41D005AD206 /* UIKit.framework */,
 				94DADE4017EBB41D005AD206 /* Foundation.framework */,
 				94DADE4217EBB41D005AD206 /* CoreGraphics.framework */,
@@ -257,6 +264,7 @@
 				94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */,
 				945C6E4517F2650B00DB6C56 /* HomePwnerItemCell.m in Sources */,
 				94DADE5D17EBBA97005AD206 /* ItemsViewController.m in Sources */,
+				947A45F717F6AE8500C74FFC /* HomePwner.xcdatamodeld in Sources */,
 				945C6E3A17EEE36C00DB6C56 /* BNRImageStore.m in Sources */,
 				94DADE6017EBBE18005AD206 /* BNRItem.m in Sources */,
 				94DADE6317EBBF8E005AD206 /* BNRItemStore.m in Sources */,
@@ -380,6 +388,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				947A45F617F6AE8500C74FFC /* HomePwner.xcdatamodel */,
+			);
+			currentVersion = 947A45F617F6AE8500C74FFC /* HomePwner.xcdatamodel */;
+			path = HomePwner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 94DADE3317EBB41D005AD206 /* Project object */;
 }
