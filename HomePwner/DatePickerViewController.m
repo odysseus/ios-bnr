@@ -26,7 +26,9 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     // Use filtered NSDate object to set dateLabel Contents
-    [dateLabel setText:[dateFormatter stringFromDate:[dateItem dateCreated]]];
+    // Convert time interval to NSDate
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[dateItem dateCreated]];
+    [dateLabel setText:[dateFormatter stringFromDate:date]];
 }
 
 // Save Date selected
@@ -34,7 +36,8 @@
 {
     [super viewWillDisappear:animated];
     // Get the picker date and save it
-    [dateItem setDateCreated:[myPicker date]];
+    NSTimeInterval date = [[datePicker date] timeIntervalSinceReferenceDate];
+    [dateItem setDateCreated:date];
 }
 
 @end

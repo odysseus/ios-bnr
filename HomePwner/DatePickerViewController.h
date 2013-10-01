@@ -12,7 +12,7 @@
 @interface DatePickerViewController : UIViewController
 {
     __weak IBOutlet UILabel *dateLabel;
-    __weak IBOutlet UIDatePicker *myPicker;
+    __weak IBOutlet UIDatePicker *datePicker;
 }
 
 // This is where we set the passed item from DetailViewController.m

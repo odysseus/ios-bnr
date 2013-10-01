@@ -50,7 +50,9 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     // Now use the date formatter and the dateCreated to set the dateLabel
-    [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+    // Convert time interval to NSDate
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[item dateCreated]];
+    [dateLabel setText:[dateFormatter stringFromDate:date]];
     
     // Setting the aspect mode property of the imageView button programatically so that
     // it displays the image inside it properly
