@@ -12,6 +12,7 @@
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
 #import "ImageZoomViewController.h"
+#import "AssetTypePickerViewController.h"
 
 @interface DetailViewController ()
 
@@ -71,6 +72,13 @@
         // Clear the imageView
         [imageView setImage:nil forState:UIControlStateNormal];
     }
+    // Shows the current asset type
+    NSString *typeLabel = [[item assetType] valueForKey:@"label"];
+    if (!typeLabel)
+        typeLabel = @"None";
+    
+    [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+                     forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -294,6 +302,68 @@
     return self;
 }
 
+- (IBAction)showAssetTypePicker:(id)sender {
+    
+    if ([assetTypePickerPopover isPopoverVisible]) {
+        [assetTypePickerPopover dismissPopoverAnimated:YES];
+        assetTypePickerPopover = nil;
+        return;
+    }
+    
+    [[self view] endEditing:YES];
+    
+    AssetTypePickerViewController *assetTypePicker = [[AssetTypePickerViewController alloc] init];
+    [assetTypePicker setItem:item];
+    [assetTypePicker setDelegate:self];
+    [assetTypePicker setContentSizeForViewInPopover:
+     CGSizeMake(320, (50 * [[[BNRItemStore sharedStore] allAssetTypes] count] + 120))];
+    
+    //place the image picker on the screen
+    //check device before putting popover on the screen
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        
+        //create a new popover controller that will display the asset picker
+        assetTypePickerPopover = [[UIPopoverController alloc] initWithContentViewController:assetTypePicker];
+        
+        [assetTypePickerPopover setDelegate:self];
+        
+        //display the popover controller
+        // sender is the asset type button item
+        CGRect rect =  [assetTypeButton frame];
+        
+        [assetTypePickerPopover presentPopoverFromRect:rect
+                                            inView:[self view]
+                          permittedArrowDirections:UIPopoverArrowDirectionLeft
+                                          animated:YES];
+    } else {
+        [[self navigationController] pushViewController:assetTypePicker
+                                               animated:YES];
+    }
+}
+
+- (void)didChangeSelection:(NSObject*)id
+{
+    NSManagedObject *assetType = (NSManagedObject*)id;
+    
+    [item setAssetType:assetType];
+    NSString *typeLabel = [[item assetType] valueForKey:@"label"];
+    if(!typeLabel)
+        typeLabel = @"None";
+    
+    [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+                     forState:UIControlStateNormal];
+    
+    //take the asset picker off the screen
+    // you must call this dismiss method
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        //dismiss the popover
+        [assetTypePickerPopover dismissPopoverAnimated:YES];
+        assetTypePickerPopover = nil;
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 - (void)save:(id)sender
 {
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
@@ -313,6 +383,7 @@
 }
 
 @end
+
 
 
 

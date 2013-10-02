@@ -11,11 +11,11 @@
 @interface ItemsViewController : UITableViewController
     <UIPopoverControllerDelegate>
 {
-    IBOutlet UIView *footerView;
+    IBOutlet UIView *itemsFooterView;
     UIPopoverController *imagePopover;
 }
 
-- (UIView *)footerView;
+- (UIView *)itemsFooterView;
 - (IBAction)addNewItem:(id)sender;
 - (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip;
 

@@ -15,6 +15,7 @@
 #import "HomePwnerItemCell.h"
 #import "ImageViewController.h"
 #import "ImageZoomViewController.h"
+#import "AssetTypePickerViewController.h"
 
 @interface ItemsViewController ()
 
@@ -167,20 +168,20 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return self.footerView;
+    return self.itemsFooterView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return [[self footerView] bounds].size.height;
+    return [[self itemsFooterView] bounds].size.height;
 }
 
-- (UIView *)footerView
+- (UIView *)itemsFooterView
 {
-    if (!footerView) {
-        [[NSBundle mainBundle] loadNibNamed:@"FooterView" owner:self options:nil];
+    if (!itemsFooterView) {
+        [[NSBundle mainBundle] loadNibNamed:@"ItemsFooterView" owner:self options:nil];
     }
-    return footerView;
+    return itemsFooterView;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -195,32 +196,34 @@
 
 - (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
 {
-    // Get the item for the index path
-    BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
-    
-    NSString *imageKey = [i imageKey];
-    
-    // If there is no image, we don't need to display anything
-    UIImage *img = [[BNRImageStore sharedStore] imageForKey:imageKey];
-    if(!img)
-        return;
-    
-    // Make a rectangle that the frame of the button relative to
-    // our table view
-    CGRect rect = [[self view] convertRect:[sender bounds] fromView:sender];
-    
-    // Create a new ImageViewController and set its image
-    ImageViewController *ivc = [[ImageViewController alloc] init];
-    [ivc setImage:img];
-    
-    // Present a 600x600 popover
-    imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
-    [imagePopover setDelegate:self];
-    [imagePopover setPopoverContentSize:CGSizeMake(600, 600)];
-    [imagePopover presentPopoverFromRect:rect
-                                  inView:[self view]
-                permittedArrowDirections:UIPopoverArrowDirectionAny
-                                animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // Get the item for the index path
+        BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
+        
+        NSString *imageKey = [i imageKey];
+        
+        // If there is no image, we don't need to display anything
+        UIImage *img = [[BNRImageStore sharedStore] imageForKey:imageKey];
+        if(!img)
+            return;
+        
+        // Make a rectangle that the frame of the button relative to
+        // our table view
+        CGRect rect = [[self view] convertRect:[sender bounds] fromView:sender];
+        
+        // Create a new ImageViewController and set its image
+        ImageViewController *ivc = [[ImageViewController alloc] init];
+        [ivc setImage:img];
+        
+        // Present a 600x600 popover
+        imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
+        [imagePopover setDelegate:self];
+        [imagePopover setPopoverContentSize:CGSizeMake(600, 600)];
+        [imagePopover presentPopoverFromRect:rect
+                                      inView:[self view]
+                    permittedArrowDirections:UIPopoverArrowDirectionAny
+                                    animated:YES];
+    }
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController

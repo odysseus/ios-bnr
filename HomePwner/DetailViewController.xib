@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
+                <outlet property="assetTypeButton" destination="cGc-Hg-Ext" id="XxO-O1-vZa"/>
                 <outlet property="dateLabel" destination="oGp-l2-qta" id="1XN-99-by4"/>
                 <outlet property="imageView" destination="Idz-AA-rSq" id="KmG-97-ibf"/>
                 <outlet property="nameField" destination="Mhw-Dk-Ff3" id="xnq-2K-NWq"/>
@@ -98,7 +99,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idz-AA-rSq">
-                    <rect key="frame" x="30" y="223" width="260" height="260"/>
+                    <rect key="frame" x="50" y="266" width="220" height="220"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Image">
@@ -106,6 +107,16 @@
                     </state>
                     <connections>
                         <action selector="showZoomedPicture:" destination="-1" eventType="touchUpInside" id="lvI-Ut-XVo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-Hg-Ext">
+                    <rect key="frame" x="40" y="223" width="240" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Asset Type">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showAssetTypePicker:" destination="-1" eventType="touchUpInside" id="4F8-ji-nPX"/>
                     </connections>
                 </button>
             </subviews>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		945C6E2917ED53F600DB6C56 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E2817ED53F600DB6C56 /* FooterView.xib */; };
+		945C6E2917ED53F600DB6C56 /* ItemsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */; };
 		945C6E2F17ED8D5E00DB6C56 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */; };
 		945C6E3017ED8D5E00DB6C56 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E2E17ED8D5E00DB6C56 /* DetailViewController.xib */; };
 		945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */; };
@@ -22,6 +22,8 @@
 		947A45F417F6A32200C74FFC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947A45F317F6A32200C74FFC /* CoreData.framework */; };
 		947A45F717F6AE8500C74FFC /* HomePwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */; };
 		947A45FD17F9385B00C74FFC /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45FC17F9385B00C74FFC /* BNRItem.m */; };
+		947A460017FB861000C74FFC /* AssetTypePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */; };
+		947A460217FB98D500C74FFC /* AssetPickerFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */; };
 		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
 		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
 		94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB417F5189E00936AB0 /* OMFG.jpg */; };
@@ -39,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		945C6E2817ED53F600DB6C56 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsFooterView.xib; sourceTree = "<group>"; };
 		945C6E2C17ED8D5E00DB6C56 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		945C6E2E17ED8D5E00DB6C56 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		947A45F617F6AE8500C74FFC /* HomePwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomePwner.xcdatamodel; sourceTree = "<group>"; };
 		947A45FB17F9385B00C74FFC /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRItem.h; path = ../BNRItem.h; sourceTree = "<group>"; };
 		947A45FC17F9385B00C74FFC /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRItem.m; path = ../BNRItem.m; sourceTree = "<group>"; };
+		947A45FE17FB861000C74FFC /* AssetTypePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetTypePickerViewController.h; sourceTree = "<group>"; };
+		947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetTypePickerViewController.m; sourceTree = "<group>"; };
+		947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetPickerFooterView.xib; sourceTree = "<group>"; };
+		947A460317FBFE8700C74FFC /* LookupPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LookupPickerDelegate.h; sourceTree = "<group>"; };
 		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 			children = (
 				94DADE4D17EBB41E005AD206 /* HomePwnerAppDelegate.h */,
 				94DADE4E17EBB41E005AD206 /* HomePwnerAppDelegate.m */,
+				947A45FE17FB861000C74FFC /* AssetTypePickerViewController.h */,
+				947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */,
+				947A460317FBFE8700C74FFC /* LookupPickerDelegate.h */,
 				947A45FB17F9385B00C74FFC /* BNRItem.h */,
 				947A45FC17F9385B00C74FFC /* BNRItem.m */,
 				94DADE6117EBBF8E005AD206 /* BNRItemStore.h */,
@@ -141,6 +150,10 @@
 				945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */,
 				947A45F017F6128B00C74FFC /* BaseCell.h */,
 				947A45F117F6128B00C74FFC /* BaseCell.m */,
+				945C6E3317EEB3B600DB6C56 /* DatePickerViewController.h */,
+				945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */,
+				945C6E2C17ED8D5E00DB6C56 /* DetailViewController.h */,
+				945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */,
 				945C6E4317F2650B00DB6C56 /* HomePwnerItemCell.h */,
 				945C6E4417F2650B00DB6C56 /* HomePwnerItemCell.m */,
 				94A09CAF17F4F3E200936AB0 /* ImageViewController.h */,
@@ -151,16 +164,13 @@
 				94DADE5C17EBBA97005AD206 /* ItemsViewController.m */,
 				945C6E4017F167F500DB6C56 /* NewItemNavController.h */,
 				945C6E4117F167F500DB6C56 /* NewItemNavController.m */,
-				945C6E2C17ED8D5E00DB6C56 /* DetailViewController.h */,
-				945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */,
-				945C6E3317EEB3B600DB6C56 /* DatePickerViewController.h */,
-				945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */,
 				94A09CB117F4F3E200936AB0 /* ImageViewController.xib */,
 				947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */,
 				945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */,
 				945C6E2E17ED8D5E00DB6C56 /* DetailViewController.xib */,
 				945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */,
-				945C6E2817ED53F600DB6C56 /* FooterView.xib */,
+				945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */,
+				947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */,
 				947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */,
 				94DADE4517EBB41E005AD206 /* Supporting Files */,
 			);
@@ -236,7 +246,7 @@
 			files = (
 				94DADE4917EBB41E005AD206 /* InfoPlist.strings in Resources */,
 				94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */,
-				945C6E2917ED53F600DB6C56 /* FooterView.xib in Resources */,
+				945C6E2917ED53F600DB6C56 /* ItemsFooterView.xib in Resources */,
 				94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */,
 				945C6E4717F2656D00DB6C56 /* HomePwnerItemCell.xib in Resources */,
 				947A45EF17F580C500C74FFC /* ImageZoomViewController.xib in Resources */,
@@ -245,6 +255,7 @@
 				94DADE5317EBB41E005AD206 /* Default@2x.png in Resources */,
 				945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */,
 				94DADE5517EBB41E005AD206 /* Default-568h@2x.png in Resources */,
+				947A460217FB98D500C74FFC /* AssetPickerFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				945C6E4217F167F500DB6C56 /* NewItemNavController.m in Sources */,
+				947A460017FB861000C74FFC /* AssetTypePickerViewController.m in Sources */,
 				94DADE4B17EBB41E005AD206 /* main.m in Sources */,
 				945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */,
 				947A45EE17F580C500C74FFC /* ImageZoomViewController.m in Sources */,
