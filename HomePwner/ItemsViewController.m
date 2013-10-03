@@ -78,7 +78,10 @@
     [cell setTableView:tableView];
     [[cell nameLabel] setText:[p itemName]];
     [[cell serialLabel] setText:[p serialNumber]];
-    [[cell valueLabel] setText: [NSString stringWithFormat:@"$%d", [p valueInDollars]]];
+    
+    // I18n for the currency symbol
+    NSString *currencySymbol = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol];
+    [[cell valueLabel] setText: [NSString stringWithFormat:@"%@%d", currencySymbol, [p valueInDollars]]];
     [[cell thumbnailView] setImage:[p thumbnail]];
     if ([p valueInDollars] > 50) {
         [[cell valueLabel] setTextColor:[UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
