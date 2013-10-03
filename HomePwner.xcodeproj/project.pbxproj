@@ -24,6 +24,8 @@
 		947A45FD17F9385B00C74FFC /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45FC17F9385B00C74FFC /* BNRItem.m */; };
 		947A460017FB861000C74FFC /* AssetTypePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */; };
 		947A460217FB98D500C74FFC /* AssetPickerFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */; };
+		947A460717FCB6C500C74FFC /* AddAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A460517FCB6C500C74FFC /* AddAssetViewController.m */; };
+		947A460817FCB6C500C74FFC /* AddAssetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A460617FCB6C500C74FFC /* AddAssetViewController.xib */; };
 		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
 		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
 		94A09CB517F5189E00936AB0 /* OMFG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB417F5189E00936AB0 /* OMFG.jpg */; };
@@ -68,6 +70,9 @@
 		947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetTypePickerViewController.m; sourceTree = "<group>"; };
 		947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetPickerFooterView.xib; sourceTree = "<group>"; };
 		947A460317FBFE8700C74FFC /* LookupPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LookupPickerDelegate.h; sourceTree = "<group>"; };
+		947A460417FCB6C500C74FFC /* AddAssetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAssetViewController.h; sourceTree = "<group>"; };
+		947A460517FCB6C500C74FFC /* AddAssetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAssetViewController.m; sourceTree = "<group>"; };
+		947A460617FCB6C500C74FFC /* AddAssetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAssetViewController.xib; sourceTree = "<group>"; };
 		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -139,6 +144,8 @@
 			children = (
 				94DADE4D17EBB41E005AD206 /* HomePwnerAppDelegate.h */,
 				94DADE4E17EBB41E005AD206 /* HomePwnerAppDelegate.m */,
+				947A460417FCB6C500C74FFC /* AddAssetViewController.h */,
+				947A460517FCB6C500C74FFC /* AddAssetViewController.m */,
 				947A45FE17FB861000C74FFC /* AssetTypePickerViewController.h */,
 				947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */,
 				947A460317FBFE8700C74FFC /* LookupPickerDelegate.h */,
@@ -168,6 +175,7 @@
 				947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */,
 				945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */,
 				945C6E2E17ED8D5E00DB6C56 /* DetailViewController.xib */,
+				947A460617FCB6C500C74FFC /* AddAssetViewController.xib */,
 				945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */,
 				945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */,
 				947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */,
@@ -256,6 +264,7 @@
 				945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */,
 				94DADE5517EBB41E005AD206 /* Default-568h@2x.png in Resources */,
 				947A460217FB98D500C74FFC /* AssetPickerFooterView.xib in Resources */,
+				947A460817FCB6C500C74FFC /* AddAssetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +286,7 @@
 				945C6E4517F2650B00DB6C56 /* HomePwnerItemCell.m in Sources */,
 				94DADE5D17EBBA97005AD206 /* ItemsViewController.m in Sources */,
 				947A45F717F6AE8500C74FFC /* HomePwner.xcdatamodeld in Sources */,
+				947A460717FCB6C500C74FFC /* AddAssetViewController.m in Sources */,
 				945C6E3A17EEE36C00DB6C56 /* BNRImageStore.m in Sources */,
 				947A45FD17F9385B00C74FFC /* BNRItem.m in Sources */,
 				94DADE6317EBBF8E005AD206 /* BNRItemStore.m in Sources */,

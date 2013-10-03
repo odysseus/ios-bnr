@@ -318,8 +318,7 @@
     [assetTypePicker setContentSizeForViewInPopover:
      CGSizeMake(320, (50 * [[[BNRItemStore sharedStore] allAssetTypes] count] + 120))];
     
-    //place the image picker on the screen
-    //check device before putting popover on the screen
+    // Check for the device before displaying the view controller
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
         //create a new popover controller that will display the asset picker
@@ -341,9 +340,9 @@
     }
 }
 
-- (void)didChangeSelection:(NSObject*)id
+- (void)didChangeSelection:(NSObject *)id
 {
-    NSManagedObject *assetType = (NSManagedObject*)id;
+    NSManagedObject *assetType = (NSManagedObject *)id;
     
     [item setAssetType:assetType];
     NSString *typeLabel = [[item assetType] valueForKey:@"label"];
@@ -353,7 +352,7 @@
     [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
                      forState:UIControlStateNormal];
     
-    //take the asset picker off the screen
+    // take the asset picker off the screen
     // you must call this dismiss method
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         //dismiss the popover

@@ -237,6 +237,31 @@
     return allAssetTypes;
 }
 
+- (void)addNewAssetTypeWithType:(NSString *)typeString
+{
+    if (!allAssetTypes)
+    {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [[model entitiesByName] objectForKey:@"BNRAssetType"];
+        
+        [request setEntity:e];
+        
+        NSError *error;
+        NSArray *result = [context executeFetchRequest:request error:&error];
+        if (!result)
+        {
+            [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
+        }
+        allAssetTypes = [result mutableCopy];
+    }
+    
+    NSManagedObject *type;
+    type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssetType"
+                                         inManagedObjectContext:context];
+    [type setValue:typeString forKey:@"label"];
+    [allAssetTypes addObject:type];
+}
+
 @end
 
 

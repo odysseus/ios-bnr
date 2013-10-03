@@ -25,8 +25,8 @@
 {
     [super awakeFromFetch];
     
-    UIImage *tn = [UIImage imageWithData:[self thumbnailData]];
-    [self setPrimitiveValue:tn forKey:@"thumbnail"];
+    UIImage *thumbnail = [UIImage imageWithData:[self thumbnailData]];
+    [self setPrimitiveValue:thumbnail forKey:@"thumbnail"];
 }
 
 - (void)setThumbnailDataFromImage:(UIImage *)image

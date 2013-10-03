@@ -9,6 +9,8 @@
 #import "AssetTypePickerViewController.h"
 #import "BNRItem.h"
 #import "BNRItemStore.h"
+#import "AddAssetViewController.h"
+#import "NewItemNavController.h"
 
 @interface AssetTypePickerViewController ()
 
@@ -25,6 +27,11 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     return [self init];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[self tableView] reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -70,12 +77,10 @@
     NSArray *allAssets = [[BNRItemStore sharedStore] allAssetTypes];
     NSManagedObject *assetType  = [allAssets objectAtIndex:[indexPath row]];
     
+    // If this is being run on an iPad
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        
-        SEL didChangeSelection = @selector(didChangeSelection:);
-        
-        //tell my delegate
-        if ([[self delegate ] respondsToSelector:didChangeSelection]) {
+        // Use the delegate method for the popover view
+        if ([[self delegate] respondsToSelector:@selector(didChangeSelection:)]) {
             [[self delegate] didChangeSelection:assetType];
         }
     } else {
@@ -104,8 +109,32 @@
 
 - (IBAction)newAssetType:(id)sender
 {
-    // TODO: Finish implementing the Silver Challenge
     NSLog(@"Button pressed");
+    AddAssetViewController *addAssetViewController = [[AddAssetViewController alloc] init];
+    NewItemNavController *navController = [[NewItemNavController alloc] initWithRootViewController:addAssetViewController];
+    [navController setModalPresentationStyle:UIModalPresentationFormSheet];
+
+    [[self navigationController] pushViewController:addAssetViewController animated:YES];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
