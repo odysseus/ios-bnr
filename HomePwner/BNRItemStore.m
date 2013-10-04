@@ -118,6 +118,7 @@
                                                inManagedObjectContext:context];
     
     [p setOrderingValue:order];
+    [p setDateCreated:[NSDate timeIntervalSinceReferenceDate]];
     
     [allItems addObject:p];
     return p;
