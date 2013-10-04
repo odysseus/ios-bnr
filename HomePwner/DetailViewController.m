@@ -77,8 +77,11 @@
     if (!typeLabel)
         typeLabel = @"None";
     
-    [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+    
+    NSString *localString = [NSString stringWithFormat:NSLocalizedString(@"Type: %@", nil), typeLabel];
+    [assetTypeButton setTitle:localString
                      forState:UIControlStateNormal];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -349,7 +352,8 @@
     if(!typeLabel)
         typeLabel = @"None";
     
-    [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+    NSString *localString = [NSString stringWithFormat:NSLocalizedString(@"Type: %@", nil), typeLabel];
+    [assetTypeButton setTitle:localString
                      forState:UIControlStateNormal];
     
     // take the asset picker off the screen

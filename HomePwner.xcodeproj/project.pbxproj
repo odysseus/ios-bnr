@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		945C6E2917ED53F600DB6C56 /* ItemsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */; };
 		945C6E2F17ED8D5E00DB6C56 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */; };
 		945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */; };
 		945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */; };
@@ -22,10 +21,12 @@
 		947A45F717F6AE8500C74FFC /* HomePwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */; };
 		947A45FD17F9385B00C74FFC /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45FC17F9385B00C74FFC /* BNRItem.m */; };
 		947A460017FB861000C74FFC /* AssetTypePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */; };
-		947A460217FB98D500C74FFC /* AssetPickerFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */; };
 		947A460717FCB6C500C74FFC /* AddAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A460517FCB6C500C74FFC /* AddAssetViewController.m */; };
 		947A460817FCB6C500C74FFC /* AddAssetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A460617FCB6C500C74FFC /* AddAssetViewController.xib */; };
 		947A460917FE198800C74FFC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A460B17FE198800C74FFC /* DetailViewController.xib */; };
+		947A461117FE328C00C74FFC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 947A461317FE328C00C74FFC /* Localizable.strings */; };
+		947A461517FE378D00C74FFC /* ItemsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A461717FE378D00C74FFC /* ItemsFooterView.xib */; };
+		947A461B17FE3AA800C74FFC /* AssetPickerFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A461D17FE3AA800C74FFC /* AssetPickerFooterView.xib */; };
 		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
 		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
 		94DADE3F17EBB41D005AD206 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE3E17EBB41D005AD206 /* UIKit.framework */; };
@@ -42,7 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsFooterView.xib; sourceTree = "<group>"; };
 		945C6E2C17ED8D5E00DB6C56 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		945C6E3317EEB3B600DB6C56 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
@@ -66,14 +66,19 @@
 		947A45FC17F9385B00C74FFC /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRItem.m; path = ../BNRItem.m; sourceTree = "<group>"; };
 		947A45FE17FB861000C74FFC /* AssetTypePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetTypePickerViewController.h; sourceTree = "<group>"; };
 		947A45FF17FB861000C74FFC /* AssetTypePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetTypePickerViewController.m; sourceTree = "<group>"; };
-		947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetPickerFooterView.xib; sourceTree = "<group>"; };
 		947A460317FBFE8700C74FFC /* LookupPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LookupPickerDelegate.h; sourceTree = "<group>"; };
 		947A460417FCB6C500C74FFC /* AddAssetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAssetViewController.h; sourceTree = "<group>"; };
 		947A460517FCB6C500C74FFC /* AddAssetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAssetViewController.m; sourceTree = "<group>"; };
 		947A460617FCB6C500C74FFC /* AddAssetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAssetViewController.xib; sourceTree = "<group>"; };
-		947A460A17FE198800C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		947A460A17FE198800C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		947A460D17FE1BBF00C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		947A460E17FE22A100C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		947A461217FE328C00C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947A461417FE329000C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947A461A17FE399300C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/ItemsFooterView.xib; sourceTree = "<group>"; };
+		947A462217FE3C7E00C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/AssetPickerFooterView.xib; sourceTree = "<group>"; };
+		947A462317FE3CF100C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ItemsFooterView.xib; sourceTree = "<group>"; };
+		947A462417FE3D4100C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AssetPickerFooterView.xib; sourceTree = "<group>"; };
 		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -177,9 +182,10 @@
 				947A460B17FE198800C74FFC /* DetailViewController.xib */,
 				947A460617FCB6C500C74FFC /* AddAssetViewController.xib */,
 				945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */,
-				945C6E2817ED53F600DB6C56 /* ItemsFooterView.xib */,
-				947A460117FB98D500C74FFC /* AssetPickerFooterView.xib */,
+				947A461717FE378D00C74FFC /* ItemsFooterView.xib */,
+				947A461D17FE3AA800C74FFC /* AssetPickerFooterView.xib */,
 				947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */,
+				947A461317FE328C00C74FFC /* Localizable.strings */,
 				94DADE4517EBB41E005AD206 /* Supporting Files */,
 			);
 			path = HomePwner;
@@ -254,15 +260,16 @@
 			files = (
 				94DADE4917EBB41E005AD206 /* InfoPlist.strings in Resources */,
 				94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */,
-				945C6E2917ED53F600DB6C56 /* ItemsFooterView.xib in Resources */,
+				947A461517FE378D00C74FFC /* ItemsFooterView.xib in Resources */,
 				945C6E4717F2656D00DB6C56 /* HomePwnerItemCell.xib in Resources */,
 				947A45EF17F580C500C74FFC /* ImageZoomViewController.xib in Resources */,
 				947A460917FE198800C74FFC /* DetailViewController.xib in Resources */,
 				94DADE5117EBB41E005AD206 /* Default.png in Resources */,
 				94DADE5317EBB41E005AD206 /* Default@2x.png in Resources */,
 				945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */,
+				947A461117FE328C00C74FFC /* Localizable.strings in Resources */,
 				94DADE5517EBB41E005AD206 /* Default-568h@2x.png in Resources */,
-				947A460217FB98D500C74FFC /* AssetPickerFooterView.xib in Resources */,
+				947A461B17FE3AA800C74FFC /* AssetPickerFooterView.xib in Resources */,
 				947A460817FCB6C500C74FFC /* AddAssetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +310,33 @@
 				947A460E17FE22A100C74FFC /* es */,
 			);
 			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		947A461317FE328C00C74FFC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				947A461217FE328C00C74FFC /* en */,
+				947A461417FE329000C74FFC /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		947A461717FE378D00C74FFC /* ItemsFooterView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				947A461A17FE399300C74FFC /* es */,
+				947A462317FE3CF100C74FFC /* en */,
+			);
+			name = ItemsFooterView.xib;
+			sourceTree = "<group>";
+		};
+		947A461D17FE3AA800C74FFC /* AssetPickerFooterView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				947A462217FE3C7E00C74FFC /* es */,
+				947A462417FE3D4100C74FFC /* en */,
+			);
+			name = AssetPickerFooterView.xib;
 			sourceTree = "<group>";
 		};
 		94DADE4717EBB41E005AD206 /* InfoPlist.strings */ = {

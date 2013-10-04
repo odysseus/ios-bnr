@@ -28,7 +28,7 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         UINavigationItem *n = [self navigationItem];
-        [n setTitle:@"Homepwner"];
+        [n setTitle:NSLocalizedString(@"Homepwner", @"Name of the application")];
         
         // Create a button to add a new item
         UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
@@ -189,7 +189,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Items";
+    return NSLocalizedString(@"Items", @"Title at the top of the ItemsViewController");
 }
 
 - (BOOL)disablesAutomaticKeyboardDismissal
