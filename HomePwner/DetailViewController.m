@@ -78,7 +78,7 @@
         typeLabel = @"None";
     
     
-    NSString *localString = [NSString stringWithFormat:NSLocalizedString(@"Type: %@", nil), typeLabel];
+    NSString *localString = [NSString stringWithFormat:NSLocalizedString(@"Type: %@", @"Type: AssetType"), typeLabel];
     [assetTypeButton setTitle:localString
                      forState:UIControlStateNormal];
 

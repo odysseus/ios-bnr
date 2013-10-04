@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		945C6E2F17ED8D5E00DB6C56 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */; };
 		945C6E3617EEB3B600DB6C56 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */; };
-		945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */; };
 		945C6E3A17EEE36C00DB6C56 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */; };
 		945C6E4217F167F500DB6C56 /* NewItemNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E4117F167F500DB6C56 /* NewItemNavController.m */; };
 		945C6E4517F2650B00DB6C56 /* HomePwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C6E4417F2650B00DB6C56 /* HomePwnerItemCell.m */; };
@@ -27,6 +26,7 @@
 		947A461117FE328C00C74FFC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 947A461317FE328C00C74FFC /* Localizable.strings */; };
 		947A461517FE378D00C74FFC /* ItemsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A461717FE378D00C74FFC /* ItemsFooterView.xib */; };
 		947A461B17FE3AA800C74FFC /* AssetPickerFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A461D17FE3AA800C74FFC /* AssetPickerFooterView.xib */; };
+		947A462A17FE4B4A00C74FFC /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A462C17FE4B4A00C74FFC /* DatePickerViewController.xib */; };
 		94A09CB217F4F3E200936AB0 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A09CB017F4F3E200936AB0 /* ImageViewController.m */; };
 		94A09CB317F4F3E200936AB0 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A09CB117F4F3E200936AB0 /* ImageViewController.xib */; };
 		94DADE3F17EBB41D005AD206 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DADE3E17EBB41D005AD206 /* UIKit.framework */; };
@@ -47,7 +47,6 @@
 		945C6E2D17ED8D5E00DB6C56 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		945C6E3317EEB3B600DB6C56 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
 		945C6E3417EEB3B600DB6C56 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
-		945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		945C6E3817EEE36C00DB6C56 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		945C6E3917EEE36C00DB6C56 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		945C6E4017F167F500DB6C56 /* NewItemNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemNavController.h; sourceTree = "<group>"; };
@@ -79,6 +78,8 @@
 		947A462217FE3C7E00C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/AssetPickerFooterView.xib; sourceTree = "<group>"; };
 		947A462317FE3CF100C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ItemsFooterView.xib; sourceTree = "<group>"; };
 		947A462417FE3D4100C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AssetPickerFooterView.xib; sourceTree = "<group>"; };
+		947A462E17FE4BEA00C74FFC /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/DatePickerViewController.xib; sourceTree = "<group>"; };
+		947A462F17FE4BF400C74FFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DatePickerViewController.xib; sourceTree = "<group>"; };
 		94A09CAF17F4F3E200936AB0 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		94A09CB017F4F3E200936AB0 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		94A09CB117F4F3E200936AB0 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -176,14 +177,14 @@
 				94DADE5C17EBBA97005AD206 /* ItemsViewController.m */,
 				945C6E4017F167F500DB6C56 /* NewItemNavController.h */,
 				945C6E4117F167F500DB6C56 /* NewItemNavController.m */,
+				947A460617FCB6C500C74FFC /* AddAssetViewController.xib */,
+				947A461D17FE3AA800C74FFC /* AssetPickerFooterView.xib */,
+				947A462C17FE4B4A00C74FFC /* DatePickerViewController.xib */,
+				947A460B17FE198800C74FFC /* DetailViewController.xib */,
+				945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */,
 				94A09CB117F4F3E200936AB0 /* ImageViewController.xib */,
 				947A45ED17F580C500C74FFC /* ImageZoomViewController.xib */,
-				945C6E3517EEB3B600DB6C56 /* DatePickerViewController.xib */,
-				947A460B17FE198800C74FFC /* DetailViewController.xib */,
-				947A460617FCB6C500C74FFC /* AddAssetViewController.xib */,
-				945C6E4617F2656D00DB6C56 /* HomePwnerItemCell.xib */,
 				947A461717FE378D00C74FFC /* ItemsFooterView.xib */,
-				947A461D17FE3AA800C74FFC /* AssetPickerFooterView.xib */,
 				947A45F517F6AE8500C74FFC /* HomePwner.xcdatamodeld */,
 				947A461317FE328C00C74FFC /* Localizable.strings */,
 				94DADE4517EBB41E005AD206 /* Supporting Files */,
@@ -266,9 +267,9 @@
 				947A460917FE198800C74FFC /* DetailViewController.xib in Resources */,
 				94DADE5117EBB41E005AD206 /* Default.png in Resources */,
 				94DADE5317EBB41E005AD206 /* Default@2x.png in Resources */,
-				945C6E3717EEB3B600DB6C56 /* DatePickerViewController.xib in Resources */,
 				947A461117FE328C00C74FFC /* Localizable.strings in Resources */,
 				94DADE5517EBB41E005AD206 /* Default-568h@2x.png in Resources */,
+				947A462A17FE4B4A00C74FFC /* DatePickerViewController.xib in Resources */,
 				947A461B17FE3AA800C74FFC /* AssetPickerFooterView.xib in Resources */,
 				947A460817FCB6C500C74FFC /* AddAssetViewController.xib in Resources */,
 			);
@@ -337,6 +338,16 @@
 				947A462417FE3D4100C74FFC /* en */,
 			);
 			name = AssetPickerFooterView.xib;
+			sourceTree = "<group>";
+		};
+		947A462C17FE4B4A00C74FFC /* DatePickerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				947A462E17FE4BEA00C74FFC /* es */,
+				947A462F17FE4BF400C74FFC /* en */,
+			);
+			name = DatePickerViewController.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		94DADE4717EBB41E005AD206 /* InfoPlist.strings */ = {

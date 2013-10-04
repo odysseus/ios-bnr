@@ -13,6 +13,7 @@
 {
     __weak IBOutlet UILabel *dateLabel;
     __weak IBOutlet UIDatePicker *datePicker;
+    __weak IBOutlet UITextView *warningField;
 }
 
 // This is where we set the passed item from DetailViewController.m

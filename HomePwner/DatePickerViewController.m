@@ -29,6 +29,7 @@
     // Convert time interval to NSDate
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[dateItem dateCreated]];
     [dateLabel setText:[dateFormatter stringFromDate:date]];
+    [warningField setText:NSLocalizedString(@"Warning, not to be used for insurance fraud!", @"Insurance fraud warning")];
 }
 
 // Save Date selected
