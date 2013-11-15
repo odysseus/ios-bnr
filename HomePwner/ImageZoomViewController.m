@@ -21,7 +21,6 @@
     [super viewWillAppear:animated];
     
     [imageView setImage:[self image]];
-    [self.view addSubview:scrollView];
 }
 
 - (void)viewDidLoad {
